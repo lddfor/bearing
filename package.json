@@ -6,8 +6,10 @@
   "scripts": {
     "dev": "vite --open --host --port 9000",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && gh-pages -d dist"
   },
+  "homepage": "https://lddfor.github.io/bearing",
   "dependencies": {
     "@vitejs/plugin-legacy": "^4.1.1",
     "axios": "^1.5.1",
@@ -19,6 +21,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
+    "gh-pages": "^6.3.0",
     "less": "^4.2.0",
     "normalize.css": "^8.0.1",
     "typescript": "^5.0.2",

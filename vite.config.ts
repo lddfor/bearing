@@ -5,10 +5,13 @@ import legacy from "@vitejs/plugin-legacy";
 export default defineConfig({
 
   assetsInclude: ["**/*.tif", "**/*.PDF", "**/*.xlsx"],
-  base: "./",
-  plugins: [legacy({
-    targets: ["defaults", "not IE 11"]
-  }), vue()],
+  base: '/bearing/',
+  plugins: [
+    legacy({
+      targets: ["defaults", "not IE 11"]
+    }),
+    vue()],
+
 
   build: {
     target: ["es2015", "chrome63"], // 默认是modules,百度说是更改这个会去输出兼容浏览器，尝试没啥作用，先配置吧

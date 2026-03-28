@@ -350,13 +350,13 @@
     const imageDir = model === 'QJS206' ? 'QJS206Image' : 'NU1006Image';
     const fullPath = `/src/assets/${imageDir}/${fileName}`;
 
-    // 在开发环境下，使用相对路径
-    if (import.meta.env.DEV) {
+    try {
+      // 使用 Vite 推荐的方式获取图片路径
+      return new URL(fullPath, import.meta.url).href;
+    } catch (error) {
+      console.error('获取图片路径失败:', error);
       return fullPath;
     }
-
-    // 生产环境可能需要调整
-    return fullPath;
   };
 
   // 按钮点击处理函数
@@ -424,13 +424,20 @@
     // 根据轴承型号和编号构建图片路径
     const model = row.bearingModel;
     const number = row.number.replace('#', '');
-    const imageDir = model === 'QJS206' ? 'QJS206' : 'NU1006';
+    const imageDir = model === 'QJS206' ? 'QJS206Image' : 'NU1006Image';
     const subFolder = `${model}-${number}`;
     const fileName = model === 'QJS206' ? 'QJS206轴承内外圈阻抗有效区间-30.png' : 'NU1006轴承内外圈阻抗有效区间-30.png';
     const imagePath = `/src/assets/${imageDir}/${subFolder}/${fileName}`;
 
-    console.log('imagePath', imagePath);
-    await loadImpedanceImage(imagePath);
+    try {
+      // 使用 Vite 推荐的方式获取图片路径
+      const resolvedPath = new URL(imagePath, import.meta.url).href;
+      console.log('resolvedPath', resolvedPath);
+      await loadImpedanceImage(resolvedPath);
+    } catch (error) {
+      console.error('获取图片路径失败:', error);
+      await loadImpedanceImage(imagePath);
+    }
   };
 
   // 组件挂载
