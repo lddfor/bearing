@@ -205,25 +205,8 @@
 
   const tableData = ref(data as BearingData[]);
 
-  const unionArrayFunction = (current: BearingData[], arr: BearingData[], type: keyof FormInline): BearingData[] => {
-    return [...current].filter((x) => [...arr].some((y) => y[type] === x[type]));
-  };
-
-  const searchKeyResult = (key: keyof FormInline): BearingData[] => {
-    return tableData.value.filter((item: BearingData) => {
-      if (formInline[key]) {
-        return formInline[key] === item[key];
-      } else {
-        return true;
-      }
-    });
-  };
-
   const searchHandle = () => {
     console.log(formInline);
-    const bearingTypeResult = searchKeyResult('bearingType');
-    const bearingModelResult = searchKeyResult('bearingModel');
-    const numberResult = searchKeyResult('number');
 
     let result = data as BearingData[];
 
@@ -348,15 +331,8 @@
 
     // 构建完整路径，使用 QJS206Image 或 NU1006Image 目录
     const imageDir = model === 'QJS206' ? 'QJS206Image' : 'NU1006Image';
-    const fullPath = `/src/assets/${imageDir}/${fileName}`;
-
-    try {
-      // 使用 Vite 推荐的方式获取图片路径
-      return new URL(fullPath, import.meta.url).href;
-    } catch (error) {
-      console.error('获取图片路径失败:', error);
-      return fullPath;
-    }
+    const basePath = import.meta.env.BASE_URL || '/';
+    return `${basePath}${imageDir}/${fileName}`;
   };
 
   // 按钮点击处理函数
@@ -427,17 +403,11 @@
     const imageDir = model === 'QJS206' ? 'QJS206Image' : 'NU1006Image';
     const subFolder = `${model}-${number}`;
     const fileName = model === 'QJS206' ? 'QJS206轴承内外圈阻抗有效区间-30.png' : 'NU1006轴承内外圈阻抗有效区间-30.png';
-    const imagePath = `/src/assets/${imageDir}/${subFolder}/${fileName}`;
+    const basePath = import.meta.env.BASE_URL || '/';
+    const imagePath = `${basePath}${imageDir}/${subFolder}/${fileName}`;
 
-    try {
-      // 使用 Vite 推荐的方式获取图片路径
-      const resolvedPath = new URL(imagePath, import.meta.url).href;
-      console.log('resolvedPath', resolvedPath);
-      await loadImpedanceImage(resolvedPath);
-    } catch (error) {
-      console.error('获取图片路径失败:', error);
-      await loadImpedanceImage(imagePath);
-    }
+    console.log('imagePath', imagePath);
+    await loadImpedanceImage(imagePath);
   };
 
   // 组件挂载
