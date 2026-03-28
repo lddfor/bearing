@@ -1,7 +1,7 @@
 <template>
   <div class="common-layout">
     <el-container>
-      <el-header class="page-header">1轴承数据数据库</el-header>
+      <el-header class="page-header">2轴承数据数据库</el-header>
       <el-container class="page-container">
         <el-aside width="160px" class="page-aside">
           <el-menu
