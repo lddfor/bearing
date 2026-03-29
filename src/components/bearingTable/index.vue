@@ -224,8 +224,6 @@
   const tableData = ref(data as BearingData[]);
 
   const searchHandle = () => {
-    console.log(formInline);
-
     let result = data as BearingData[];
 
     if (formInline.bearingType) {
@@ -303,13 +301,9 @@
     impedanceImageUrl.value = '';
 
     try {
-      console.log('开始加载图片:', imagePath);
-
       // 直接设置图片路径作为 src
       impedanceImageUrl.value = imagePath;
-      console.log('图片加载成功');
     } catch (error: any) {
-      console.error('加载图片失败:', error);
       impedanceError.value = error.message || '图片加载失败，请检查图片文件是否存在或格式是否正确';
     } finally {
       impedanceLoading.value = false;
@@ -324,13 +318,9 @@
     imageDataUrl.value = '';
 
     try {
-      console.log('开始加载图片:', imagePath);
-
       // 直接设置图片路径作为 src
       imageDataUrl.value = imagePath;
-      console.log('图片加载成功');
     } catch (error: any) {
-      console.error('加载 PNG 图片失败:', error);
       imageError.value = error.message || '图片加载失败，请检查图片文件是否存在或格式是否正确';
     } finally {
       imageLoading.value = false;
@@ -365,16 +355,13 @@
 
   // 按钮点击处理函数
   const handleButton1 = async (row: BearingData) => {
-    console.log('按钮1点击', row);
     imageDialogTitle.value = `${row.bearingModel}-${row.number}-Ls对比`;
     imageDialogVisible.value = true;
     const imagePath = getImagePath(row, 'Ls');
-    console.log('imagePath', imagePath);
     await loadPngImage(imagePath);
   };
 
   const handleButton2 = async (row: BearingData) => {
-    console.log('按钮2点击', row);
     imageDialogTitle.value = `${row.bearingModel}-${row.number}-Rs对比`;
     imageDialogVisible.value = true;
     const imagePath = getImagePath(row, 'Rs');
@@ -382,7 +369,6 @@
   };
 
   const handleButton3 = async (row: BearingData) => {
-    console.log('按钮3点击', row);
     imageDialogTitle.value = `${row.bearingModel}-${row.number}-Z对比`;
     imageDialogVisible.value = true;
     const imagePath = getImagePath(row, 'Z');
@@ -408,8 +394,6 @@
 
   // 原始数据按钮点击处理函数
   const handleOriginalData = (row: BearingData) => {
-    console.log('原始数据按钮点击', row);
-
     // 根据当前行的轴承型号选择对应的数据源
     const dataSource = (row.bearingModel === 'QJS206' ? qjs206Data : nu1006Data) as DataSource;
 
@@ -422,7 +406,6 @@
 
   // 轴承内圈抗阻有效区间按钮点击处理函数
   const handleImpedanceRange = async (row: BearingData) => {
-    console.log('轴承内圈抗阻有效区间按钮点击', row);
     impedanceDialogVisible.value = true;
 
     // 根据轴承型号构建图片路径
@@ -432,14 +415,8 @@
     const basePath = import.meta.env.BASE_URL || '/';
     const imagePath = `${basePath}${imageDir}/${fileName}`;
 
-    console.log('imagePath', imagePath);
     await loadImpedanceImage(imagePath);
   };
-
-  // 组件挂载
-  onMounted(() => {
-    console.log('组件已挂载');
-  });
 </script>
 
 <style lang="less" scoped>

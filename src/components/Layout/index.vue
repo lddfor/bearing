@@ -4,13 +4,7 @@
       <el-header class="page-header">轴承检测数据库</el-header>
       <el-container class="page-container">
         <el-aside width="160px" class="page-aside">
-          <el-menu
-            :default-active="activeMenu"
-            class="menu-vertical-style"
-            @open="handleOpen"
-            @select="handleMenuSelect"
-            @close="handleClose"
-          >
+          <el-menu :default-active="activeMenu" class="menu-vertical-style" @select="handleMenuSelect">
             <el-menu-item index="bearing">
               <el-icon>
                 <icon-menu />
@@ -69,13 +63,6 @@
   const router = useRouter();
   const route = useRoute();
 
-  const handleOpen = (key: string, keyPath: string[]) => {
-    console.log(key, keyPath);
-  };
-  const handleClose = (key: string, keyPath: string[]) => {
-    console.log(key, keyPath);
-  };
-
   const openVisible = ref(false);
   const pdfURLSrc = ref('');
   const deviceDialogVisible = ref(false);
@@ -93,9 +80,7 @@
   });
 
   const handleMenuSelect = (key: string) => {
-    console.log(key);
     if (key === 'desc') {
-      console.log('path', key);
       // 使用 public 目录中的 PDF 文件
       const basePath = import.meta.env.BASE_URL || '/';
       // 对文件名进行 URL 编码，确保空格和特殊字符被正确处理
@@ -103,7 +88,6 @@
       pdfURLSrc.value = `${basePath}pdf/${encodedFileName}`;
       openVisible.value = true;
     } else if (key === 'device') {
-      console.log('检测设备');
       // 使用 public 目录中的设备图片
       const basePath = import.meta.env.BASE_URL || '/';
       deviceImageUrl.value = `${basePath}images/device.jpg`;

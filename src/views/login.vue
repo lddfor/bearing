@@ -58,9 +58,6 @@
     if (!formEl) return;
     await formEl.validate((valid, fields) => {
       if (valid) {
-        console.log(ruleForm);
-        console.log(ruleForm.name);
-        console.log('submit!');
         router.push({
           name: 'Bearing',
         });
@@ -90,7 +87,6 @@
     }
 
     .login-content {
-      //height: 400px;
       width: 430px;
       background: white;
       border-radius: 10px;
