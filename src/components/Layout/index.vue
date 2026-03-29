@@ -106,7 +106,7 @@
       console.log('检测设备');
       // 使用 public 目录中的设备图片
       const basePath = import.meta.env.BASE_URL || '/';
-      deviceImageUrl.value = `${basePath}pdf/device.jpg`;
+      deviceImageUrl.value = `${basePath}images/device.jpg`;
       deviceDialogVisible.value = true;
     } else {
       router.push(`/${key}`);
