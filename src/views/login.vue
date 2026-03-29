@@ -1,7 +1,7 @@
 <template>
   <div class="login-page">
     <div class="login-content">
-      <div class="login-title">钛合金加工刀具电磁强化数据库</div>
+      <div class="login-title">轴承强化处理励磁信号变化数据库</div>
       <el-form
         ref="ruleFormRef"
         :model="ruleForm"
@@ -35,7 +35,7 @@
   const router = useRouter();
   const ruleFormRef = ref<FormInstance>();
   const ruleForm = reactive<RuleForm>({
-    name: 'Tsinghua-ES',
+    name: 'BJUT-TS',
     password: '',
   });
 

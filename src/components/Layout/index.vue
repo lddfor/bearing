@@ -1,7 +1,7 @@
 <template>
   <div class="common-layout">
     <el-container>
-      <el-header class="page-header">2轴承数据数据库</el-header>
+      <el-header class="page-header">轴承检测信号数据库</el-header>
       <el-container class="page-container">
         <el-aside width="160px" class="page-aside">
           <el-menu
@@ -23,6 +23,10 @@
                 <zoom-in />
               </el-icon>
               <span>试验大纲</span>
+            </el-menu-item>
+            <el-menu-item index="device">
+              <el-icon><TakeawayBox /></el-icon>
+              <span>检测设备</span>
             </el-menu-item>
           </el-menu>
         </el-aside>
@@ -46,7 +50,7 @@
   </div>
 </template>
 <script setup lang="ts">
-  import { Menu as IconMenu, ZoomIn } from '@element-plus/icons-vue';
+  import { Menu as IconMenu, ZoomIn, TakeawayBox } from '@element-plus/icons-vue';
   import { ref, computed } from 'vue';
   import { useRouter, useRoute } from 'vue-router';
 
@@ -78,9 +82,11 @@
     console.log(key);
     if (key === 'desc') {
       console.log('path', key);
-      const files = import.meta.glob('/src/assets/pdf/*.pdf', { eager: true });
-      console.log(Object.keys(files));
-      pdfURLSrc.value = './' + Object.keys(files)[0];
+      // 使用 public 目录中的 PDF 文件
+      const basePath = import.meta.env.BASE_URL || '/';
+      // 对文件名进行 URL 编码，确保空格和特殊字符被正确处理
+      const encodedFileName = encodeURIComponent('试验大纲_M50轴承产品电磁耦合强化有效性检测技术.pdf');
+      pdfURLSrc.value = `${basePath}pdf/${encodedFileName}`;
       openVisible.value = true;
     } else {
       router.push(`/${key}`);

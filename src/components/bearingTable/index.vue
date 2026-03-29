@@ -31,40 +31,35 @@
         <el-button @click="resetHandle">清空</el-button>
       </el-form-item>
     </el-form>
-    <el-table :data="tableData" style="width: 100%; min-width: 1200px; max-height: calc(100vh - 200px); overflow: auto">
+    <el-table :data="tableData" style="width: 100%; overflow: auto">
       <el-table-column label="序号" type="index" width="60" />
-      <el-table-column prop="bearingType" label="轴承类型" min-width="120" />
-      <el-table-column prop="bearingModel" label="轴承型号" min-width="120" />
-      <el-table-column prop="number" label="编号" min-width="80" />
+      <el-table-column prop="bearingType" label="轴承类型" min-width="110" />
+      <el-table-column prop="bearingModel" label="轴承型号" min-width="80" />
+      <el-table-column prop="number" label="编号" min-width="60" align="center" />
       <el-table-column label="未处理" align="center">
-        <el-table-column align="center" prop="rsLsUntreated" label="Rs/Ω" min-width="120" />
-        <el-table-column align="center" prop="zLsUntreated" label="Ls/mH" min-width="120" />
-        <el-table-column align="center" prop="rsIonImplantation" label="Z/Ω" min-width="120" />
+        <el-table-column align="center" prop="rsLsUntreated" label="Rs/Ω" min-width="90" />
+        <el-table-column align="center" prop="zLsUntreated" label="Ls/mH" min-width="90" />
+        <el-table-column align="center" prop="rsIonImplantation" label="Z/Ω" min-width="100" />
       </el-table-column>
       <el-table-column label="离子注入" align="center">
-        <el-table-column align="center" prop="zIonImplantation" label="Rs/Ω" min-width="120" />
-        <el-table-column align="center" prop="zIonImplantation2" label="Ls/mH" min-width="120" />
-        <el-table-column align="center" prop="rsElectromagneticCoupling" label="Z/Ω" min-width="120" />
+        <el-table-column align="center" prop="zIonImplantation" label="Rs/Ω" width="80" />
+        <el-table-column align="center" prop="zIonImplantation2" label="Ls/mH" width="90" />
+        <el-table-column align="center" prop="rsElectromagneticCoupling" label="Z/Ω" width="100" />
       </el-table-column>
       <el-table-column label="电磁耦合强化" align="center">
-        <el-table-column align="center" prop="zElectromagneticCoupling" label="Rs/Ω" min-width="120" />
-        <el-table-column align="center" prop="zElectromagneticCoupling2" label="Ls/mH" min-width="120" />
-        <el-table-column align="center" prop="zElectromagneticCoupling3" label="Z/Ω" min-width="120" />
+        <el-table-column align="center" prop="zElectromagneticCoupling" label="Rs/Ω" min-width="90" />
+        <el-table-column align="center" prop="zElectromagneticCoupling2" label="Ls/mH" min-width="90" />
+        <el-table-column align="center" prop="zElectromagneticCoupling3" label="Z/Ω" min-width="100" />
       </el-table-column>
-      <el-table-column
-        align="center"
-        prop="impedanceChangeRate"
-        label="耦合强化技术处理的阻抗变化率%"
-        min-width="180"
-      />
+      <el-table-column align="center" prop="impedanceChangeRate" label="耦合强化技术处理的阻抗变化率%" />
       <el-table-column fixed="right" label="操作" width="400" align="center" :resizable="false">
         <template #default="scope">
-          <el-button link type="primary" size="small" @click="handleButton1(scope.row)">Ls.png</el-button>
-          <el-button link type="primary" size="small" @click="handleButton2(scope.row)">Rs.png</el-button>
-          <el-button link type="primary" size="small" @click="handleButton3(scope.row)">Z.png</el-button>
+          <el-button link type="primary" size="small" @click="handleButton1(scope.row)">Ls图</el-button>
+          <el-button link type="primary" size="small" @click="handleButton2(scope.row)">Rs图</el-button>
+          <el-button link type="primary" size="small" @click="handleButton3(scope.row)">Z图</el-button>
           <el-button link type="primary" size="small" @click="handleOriginalData(scope.row)">原始数据</el-button>
           <el-button link type="primary" size="small" @click="handleImpedanceRange(scope.row)"
-            >轴承内圈抗阻有效区间</el-button
+            >{{ scope.row.bearingModel }}轴承内外圈阻抗有效区</el-button
           >
         </template>
       </el-table-column>
@@ -103,7 +98,7 @@
     <!-- 轴承内圈抗阻有效区间图片预览对话框 -->
     <el-dialog
       v-model="impedanceDialogVisible"
-      title="轴承内圈抗阻有效区间"
+      title="轴承内圈阻抗有效区间"
       width="900"
       destroy-on-close
       center
