@@ -31,7 +31,7 @@
         <el-button @click="resetHandle">清空</el-button>
       </el-form-item>
     </el-form>
-    <el-table :data="tableData" style="width: 100%; overflow: auto">
+    <el-table :data="tableData" style="width: 100%; max-height: calc(100vh - 200px); overflow: auto">
       <el-table-column label="序号" type="index" width="60" />
       <el-table-column prop="bearingType" label="轴承类型" min-width="110" />
       <el-table-column prop="bearingModel" label="轴承型号" min-width="80" />
@@ -52,15 +52,9 @@
         <el-table-column align="center" prop="zElectromagneticCoupling3" label="Z/Ω" min-width="100" />
       </el-table-column>
       <el-table-column align="center" prop="impedanceChangeRate" label="耦合强化技术处理的阻抗变化率%" />
-      <el-table-column fixed="right" label="操作" width="400" align="center" :resizable="false">
+      <el-table-column fixed="right" label="操作" width="80" align="center" :resizable="false">
         <template #default="scope">
-          <el-button link type="primary" size="small" @click="handleButton1(scope.row)">Ls图</el-button>
-          <el-button link type="primary" size="small" @click="handleButton2(scope.row)">Rs图</el-button>
-          <el-button link type="primary" size="small" @click="handleButton3(scope.row)">Z图</el-button>
-          <el-button link type="primary" size="small" @click="handleOriginalData(scope.row)">原始数据</el-button>
-          <el-button link type="primary" size="small" @click="handleImpedanceRange(scope.row)"
-            >{{ scope.row.bearingModel }}轴承内外圈阻抗有效区</el-button
-          >
+          <el-button link type="primary" size="small" @click="openSidebar(scope.row)">详情</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -118,15 +112,44 @@
         </div>
         <div v-else class="no-image">
           <el-icon size="48" color="#909399"><Picture /></el-icon>
-          <p>请点击按钮查看图片</p>
+          <p>暂无图片</p>
         </div>
       </div>
       <template #footer>
         <span class="dialog-footer">
-          <el-button @click="closeImpedanceDialog">关闭</el-button>
+          <el-button @click="impedanceDialogVisible = false">关闭</el-button>
         </span>
       </template>
     </el-dialog>
+
+    <!-- 侧边操作弹框 -->
+    <el-drawer v-model="sidebarVisible" title="操作选项" direction="rtl" size="300px" destroy-on-close>
+      <div class="sidebar-content">
+        <div v-if="currentRow" class="row-info">
+          <h3>{{ currentRow.bearingModel }} - {{ currentRow.number }}</h3>
+          <p>轴承类型：{{ currentRow.bearingType }}</p>
+        </div>
+        <div class="action-buttons">
+          <el-space direction="vertical" style="width: 100%">
+            <el-button type="primary" text @click="currentRow && handleButton1(currentRow)" style="width: 100%">
+              Ls图
+            </el-button>
+            <el-button type="primary" text @click="currentRow && handleButton2(currentRow)" style="width: 100%">
+              Rs图
+            </el-button>
+            <el-button type="primary" text @click="currentRow && handleButton3(currentRow)" style="width: 100%">
+              Z图
+            </el-button>
+            <el-button type="primary" text @click="currentRow && handleOriginalData(currentRow)" style="width: 100%">
+              原始数据
+            </el-button>
+            <el-button type="primary" text @click="currentRow && handleImpedanceRange(currentRow)" style="width: 100%">
+              {{ currentRow?.bearingModel }}轴承内外圈阻抗有效区
+            </el-button>
+          </el-space>
+        </div>
+      </div>
+    </el-drawer>
 
     <!-- TIF 图片预览对话框 -->
     <el-dialog
@@ -253,6 +276,10 @@
   const impedanceLoading = ref(false);
   const impedanceError = ref('');
 
+  // 侧边操作弹框相关
+  const sidebarVisible = ref(false);
+  const currentRow = ref<BearingData | null>(null);
+
   // 关闭轴承内圈抗阻有效区间图片对话框时清理资源
   const closeImpedanceDialog = () => {
     impedanceDialogVisible.value = false;
@@ -260,6 +287,12 @@
       impedanceImageUrl.value = '';
       impedanceError.value = '';
     }, 300);
+  };
+
+  // 打开侧边操作弹框
+  const openSidebar = (row: BearingData) => {
+    currentRow.value = row;
+    sidebarVisible.value = true;
   };
 
   // 加载轴承内圈抗阻有效区间图片
@@ -466,5 +499,15 @@
       text-align: center;
       padding: 20px;
     }
+  }
+
+  .action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .action-buttons .el-button {
+    width: 100%;
   }
 </style>

@@ -47,6 +47,18 @@
         </span>
       </template>
     </el-dialog>
+
+    <!-- 检测设备图片对话框 -->
+    <el-dialog v-model="deviceDialogVisible" title="检测设备" width="800" destroy-on-close center>
+      <div class="device-image-container">
+        <img :src="deviceImageUrl" alt="检测设备" style="max-width: 100%; max-height: 70vh; object-fit: contain" />
+      </div>
+      <template #footer>
+        <span class="dialog-footer">
+          <el-button @click="deviceDialogVisible = false">关闭</el-button>
+        </span>
+      </template>
+    </el-dialog>
   </div>
 </template>
 <script setup lang="ts">
@@ -66,6 +78,8 @@
 
   const openVisible = ref(false);
   const pdfURLSrc = ref('');
+  const deviceDialogVisible = ref(false);
+  const deviceImageUrl = ref('');
 
   // 计算当前激活的菜单项
   const activeMenu = computed(() => {
@@ -88,6 +102,12 @@
       const encodedFileName = encodeURIComponent('试验大纲_M50轴承产品电磁耦合强化有效性检测技术.pdf');
       pdfURLSrc.value = `${basePath}pdf/${encodedFileName}`;
       openVisible.value = true;
+    } else if (key === 'device') {
+      console.log('检测设备');
+      // 使用 public 目录中的设备图片
+      const basePath = import.meta.env.BASE_URL || '/';
+      deviceImageUrl.value = `${basePath}pdf/device.jpg`;
+      deviceDialogVisible.value = true;
     } else {
       router.push(`/${key}`);
     }
