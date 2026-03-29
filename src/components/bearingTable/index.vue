@@ -425,14 +425,12 @@
     console.log('轴承内圈抗阻有效区间按钮点击', row);
     impedanceDialogVisible.value = true;
 
-    // 根据轴承型号和编号构建图片路径
+    // 根据轴承型号构建图片路径
     const model = row.bearingModel;
-    const number = row.number.replace('#', '');
     const imageDir = model === 'QJS206' ? 'QJS206Image' : 'NU1006Image';
-    const subFolder = `${model}-${number}`;
     const fileName = model === 'QJS206' ? 'QJS206轴承内外圈阻抗有效区间-30.png' : 'NU1006轴承内外圈阻抗有效区间-30.png';
     const basePath = import.meta.env.BASE_URL || '/';
-    const imagePath = `${basePath}${imageDir}/${subFolder}/${fileName}`;
+    const imagePath = `${basePath}${imageDir}/${fileName}`;
 
     console.log('imagePath', imagePath);
     await loadImpedanceImage(imagePath);
