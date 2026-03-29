@@ -31,10 +31,10 @@
         <el-button @click="resetHandle">清空</el-button>
       </el-form-item>
     </el-form>
-    <el-table :data="tableData" style="width: 100%; max-height: calc(100vh - 200px); overflow: auto">
+    <el-table :data="tableData" height="calc(100vh - 200px)">
       <el-table-column label="序号" type="index" width="60" />
       <el-table-column prop="bearingType" label="轴承类型" min-width="110" />
-      <el-table-column prop="bearingModel" label="轴承型号" min-width="80" />
+      <el-table-column prop="bearingModel" label="轴承型号" min-width="100" />
       <el-table-column prop="number" label="编号" min-width="60" align="center" />
       <el-table-column label="未处理" align="center">
         <el-table-column align="center" prop="rsLsUntreated" label="Rs/Ω" min-width="90" />
@@ -51,7 +51,7 @@
         <el-table-column align="center" prop="zElectromagneticCoupling2" label="Ls/mH" min-width="90" />
         <el-table-column align="center" prop="zElectromagneticCoupling3" label="Z/Ω" min-width="100" />
       </el-table-column>
-      <el-table-column align="center" prop="impedanceChangeRate" label="耦合强化技术处理的阻抗变化率%" />
+      <el-table-column align="center" prop="impedanceChangeRate" width="120" label="耦合强化技术处理的阻抗变化率%" />
       <el-table-column fixed="right" label="操作" width="80" align="center" :resizable="false">
         <template #default="scope">
           <el-button link type="primary" size="small" @click="openSidebar(scope.row)">详情</el-button>
@@ -92,7 +92,7 @@
     <!-- 轴承内圈抗阻有效区间图片预览对话框 -->
     <el-dialog
       v-model="impedanceDialogVisible"
-      title="轴承内圈阻抗有效区间"
+      title=""
       width="900"
       destroy-on-close
       center
@@ -144,7 +144,7 @@
               原始数据
             </el-button>
             <el-button type="primary" text @click="currentRow && handleImpedanceRange(currentRow)" style="width: 100%">
-              {{ currentRow?.bearingModel }}轴承内外圈阻抗有效区
+              {{ currentRow?.bearingModel }}强化后阻抗有效区间
             </el-button>
           </el-space>
         </div>

@@ -1,7 +1,7 @@
 <template>
   <div class="login-page">
     <div class="login-content">
-      <div class="login-title">轴承强化处理励磁信号变化数据库</div>
+      <div class="login-title">轴承检测数据库</div>
       <el-form
         ref="ruleFormRef"
         :model="ruleForm"
@@ -78,7 +78,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('../assets/image/background_image.jpg') no-repeat;
+    background: url('/background_image.jpg') no-repeat;
     background-size: cover;
 
     .login-title {

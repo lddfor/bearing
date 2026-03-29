@@ -1,7 +1,7 @@
 <template>
   <div class="common-layout">
     <el-container>
-      <el-header class="page-header">轴承检测信号数据库</el-header>
+      <el-header class="page-header">轴承检测数据库</el-header>
       <el-container class="page-container">
         <el-aside width="160px" class="page-aside">
           <el-menu
@@ -120,7 +120,7 @@
 
     .page-header {
       line-height: 60px;
-      background: linear-gradient(90deg, #061716 1.49%, #9a890c 100%);
+      background: #409eff;
       color: white;
       font-weight: 700;
       font-size: 25px;
