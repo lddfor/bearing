@@ -120,7 +120,7 @@
 
     .page-header {
       line-height: 60px;
-      background: #409eff;
+      background: linear-gradient(135deg, #409eff 50%, #f5576c 100%);
       color: white;
       font-weight: 700;
       font-size: 25px;
