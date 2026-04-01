@@ -21,7 +21,7 @@
             clearable
           >
             <el-option label="QJS206" value="QJS206" />
-            <el-option label="NJ1006" value="NJ1006" />
+            <el-option label="NU1006" value="NU1006" />
           </el-select>
         </el-form-item>
         <el-form-item label="编号" style="margin-left: 20px">
@@ -31,27 +31,32 @@
         <el-button @click="resetHandle">清空</el-button>
       </el-form-item>
     </el-form>
-    <el-table :data="tableData" height="calc(100vh - 200px)">
+    <el-table :data="tableData" height="calc(100vh - 150px)">
       <el-table-column label="序号" type="index" width="60" />
-      <el-table-column prop="bearingType" label="轴承类型" min-width="110" />
-      <el-table-column prop="bearingModel" label="轴承型号" min-width="100" />
+      <el-table-column prop="bearingType" label="轴承类型" min-width="110" align="center" />
+      <el-table-column prop="bearingModel" label="轴承型号" min-width="100" align="center" />
       <el-table-column prop="number" label="编号" min-width="60" align="center" />
       <el-table-column label="未处理" align="center">
-        <el-table-column align="center" prop="rsLsUntreated" label="Rs/Ω" min-width="90" />
+        <el-table-column align="center" prop="rsLsUntreated" label="Rs/Ω" min-width="80" />
         <el-table-column align="center" prop="zLsUntreated" label="Ls/mH" min-width="90" />
         <el-table-column align="center" prop="rsIonImplantation" label="Z/Ω" min-width="100" />
       </el-table-column>
       <el-table-column label="离子注入" align="center">
-        <el-table-column align="center" prop="zIonImplantation" label="Rs/Ω" width="80" />
-        <el-table-column align="center" prop="zIonImplantation2" label="Ls/mH" width="90" />
-        <el-table-column align="center" prop="rsElectromagneticCoupling" label="Z/Ω" width="100" />
+        <el-table-column align="center" prop="zIonImplantation" label="Rs/Ω" min-width="80" />
+        <el-table-column align="center" prop="zIonImplantation2" label="Ls/mH" min-width="90" />
+        <el-table-column align="center" prop="rsElectromagneticCoupling" label="Z/Ω" min-width="100" />
       </el-table-column>
       <el-table-column label="电磁耦合强化" align="center">
         <el-table-column align="center" prop="zElectromagneticCoupling" label="Rs/Ω" min-width="90" />
         <el-table-column align="center" prop="zElectromagneticCoupling2" label="Ls/mH" min-width="90" />
         <el-table-column align="center" prop="zElectromagneticCoupling3" label="Z/Ω" min-width="100" />
       </el-table-column>
-      <el-table-column align="center" prop="impedanceChangeRate" width="120" label="耦合强化技术处理的阻抗变化率%" />
+      <el-table-column
+        align="center"
+        prop="impedanceChangeRate"
+        width="120"
+        label="电磁耦合强化处理相较于未处理的阻抗变化率%"
+      />
       <el-table-column fixed="right" label="操作" width="80" align="center" :resizable="false">
         <template #default="scope">
           <el-button link type="primary" size="small" @click="openSidebar(scope.row)">详情</el-button>
