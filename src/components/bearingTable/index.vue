@@ -192,7 +192,7 @@
 </template>
 
 <script lang="ts" setup>
-  import { reactive, ref, onMounted } from 'vue';
+  import { reactive, ref } from 'vue';
   import { CircleClose, Picture } from '@element-plus/icons-vue';
   import data from '../../data/bearingData.ts';
   import qjs206Data from '../../data/QJS206.json';

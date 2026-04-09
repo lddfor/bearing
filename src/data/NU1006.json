@@ -1668,398 +1668,6 @@
   "NU1006-18": [
     {
       "id": 1,
-      "rsUntreated": 135.886,
-      "rsIonImplantation": 140.316,
-      "rsElectromagneticCoupling": 140.139,
-      "lsUntreated": -1.17522,
-      "lsIonImplantation": -1.16008,
-      "lsElectromagneticCoupling": -1.16135,
-      "zUntreated": 1483.06396,
-      "zIonImplantation": 1464.53622,
-      "zElectromagneticCoupling": 1466.10656
-    },
-    {
-      "id": 2,
-      "rsUntreated": 136.28,
-      "rsIonImplantation": 140.41,
-      "rsElectromagneticCoupling": 140.404,
-      "lsUntreated": -1.17487,
-      "lsIonImplantation": -1.15964,
-      "lsElectromagneticCoupling": -1.16087,
-      "zUntreated": 1482.66069,
-      "zIonImplantation": 1463.98966,
-      "zElectromagneticCoupling": 1465.5274
-    },
-    {
-      "id": 3,
-      "rsUntreated": 137.143,
-      "rsIonImplantation": 140.615,
-      "rsElectromagneticCoupling": 140.544,
-      "lsUntreated": -1.175,
-      "lsIonImplantation": -1.15989,
-      "lsElectromagneticCoupling": -1.16112,
-      "zUntreated": 1482.90923,
-      "zIonImplantation": 1464.3241,
-      "zElectromagneticCoupling": 1465.86492
-    },
-    {
-      "id": 4,
-      "rsUntreated": 136.602,
-      "rsIonImplantation": 140.645,
-      "rsElectromagneticCoupling": 140.567,
-      "lsUntreated": -1.17473,
-      "lsIonImplantation": -1.15974,
-      "lsElectromagneticCoupling": -1.16082,
-      "zUntreated": 1482.51604,
-      "zIonImplantation": 1464.14632,
-      "zElectromagneticCoupling": 1465.48084
-    },
-    {
-      "id": 5,
-      "rsUntreated": 136.697,
-      "rsIonImplantation": 140.704,
-      "rsElectromagneticCoupling": 140.614,
-      "lsUntreated": -1.17525,
-      "lsIonImplantation": -1.16012,
-      "lsElectromagneticCoupling": -1.16139,
-      "zUntreated": 1483.17545,
-      "zIonImplantation": 1464.61844,
-      "zElectromagneticCoupling": 1466.2078
-    },
-    {
-      "id": 6,
-      "rsUntreated": 137.032,
-      "rsIonImplantation": 140.759,
-      "rsElectromagneticCoupling": 140.568,
-      "lsUntreated": -1.17487,
-      "lsIonImplantation": -1.15967,
-      "lsElectromagneticCoupling": -1.16109,
-      "zUntreated": 1482.7273,
-      "zIonImplantation": 1464.07188,
-      "zElectromagneticCoupling": 1465.82164
-    },
-    {
-      "id": 7,
-      "rsUntreated": 137.24,
-      "rsIonImplantation": 140.8,
-      "rsElectromagneticCoupling": 140.483,
-      "lsUntreated": -1.17477,
-      "lsIonImplantation": -1.15963,
-      "lsElectromagneticCoupling": -1.16094,
-      "zUntreated": 1482.62539,
-      "zIonImplantation": 1464.01484,
-      "zElectromagneticCoupling": 1465.63082
-    },
-    {
-      "id": "平均值",
-      "rsUntreated": 136.697,
-      "rsIonImplantation": 140.607,
-      "rsElectromagneticCoupling": 140.474,
-      "lsUntreated": -1.17496,
-      "lsIonImplantation": -1.15982,
-      "lsElectromagneticCoupling": -1.16108,
-      "zUntreated": 1482.81115,
-      "zIonImplantation": 1464.24307,
-      "zElectromagneticCoupling": 1465.80571
-    }
-  ],
-  "NU1006-19": [
-    {
-      "id": 1,
-      "rsUntreated": 135.766,
-      "rsIonImplantation": 139.494,
-      "rsElectromagneticCoupling": 139.496,
-      "lsUntreated": -1.17419,
-      "lsIonImplantation": -1.15694,
-      "lsElectromagneticCoupling": -1.15923,
-      "zUntreated": 1481.75962,
-      "zIonImplantation": 1460.53578,
-      "zElectromagneticCoupling": 1463.39333
-    },
-    {
-      "id": 2,
-      "rsUntreated": 136.161,
-      "rsIonImplantation": 139.555,
-      "rsElectromagneticCoupling": 139.642,
-      "lsUntreated": -1.17384,
-      "lsIonImplantation": -1.1565,
-      "lsElectromagneticCoupling": -1.15875,
-      "zUntreated": 1481.35635,
-      "zIonImplantation": 1459.98922,
-      "zElectromagneticCoupling": 1462.81417
-    },
-    {
-      "id": 3,
-      "rsUntreated": 137.023,
-      "rsIonImplantation": 139.741,
-      "rsElectromagneticCoupling": 139.795,
-      "lsUntreated": -1.17397,
-      "lsIonImplantation": -1.15684,
-      "lsElectromagneticCoupling": -1.15901,
-      "zUntreated": 1481.60489,
-      "zIonImplantation": 1460.42366,
-      "zElectromagneticCoupling": 1463.15169
-    },
-    {
-      "id": 4,
-      "rsUntreated": 136.482,
-      "rsIonImplantation": 139.812,
-      "rsElectromagneticCoupling": 139.825,
-      "lsUntreated": -1.1737,
-      "lsIonImplantation": -1.15669,
-      "lsElectromagneticCoupling": -1.1587,
-      "zUntreated": 1481.2117,
-      "zIonImplantation": 1460.24588,
-      "zElectromagneticCoupling": 1462.76761
-    },
-    {
-      "id": 5,
-      "rsUntreated": 136.577,
-      "rsIonImplantation": 139.881,
-      "rsElectromagneticCoupling": 139.851,
-      "lsUntreated": -1.17422,
-      "lsIonImplantation": -1.15698,
-      "lsElectromagneticCoupling": -1.1593,
-      "zUntreated": 1481.87111,
-      "zIonImplantation": 1460.618,
-      "zElectromagneticCoupling": 1463.51357
-    },
-    {
-      "id": 6,
-      "rsUntreated": 136.912,
-      "rsIonImplantation": 139.882,
-      "rsElectromagneticCoupling": 139.754,
-      "lsUntreated": -1.17383,
-      "lsIonImplantation": -1.15654,
-      "lsElectromagneticCoupling": -1.15896,
-      "zUntreated": 1481.42296,
-      "zIonImplantation": 1460.07144,
-      "zElectromagneticCoupling": 1463.08741
-    },
-    {
-      "id": 7,
-      "rsUntreated": 137.119,
-      "rsIonImplantation": 139.893,
-      "rsElectromagneticCoupling": 139.615,
-      "lsUntreated": -1.17374,
-      "lsIonImplantation": -1.1565,
-      "lsElectromagneticCoupling": -1.15882,
-      "zUntreated": 1481.32105,
-      "zIonImplantation": 1460.0144,
-      "zElectromagneticCoupling": 1462.89659
-    },
-    {
-      "id": "平均值",
-      "rsUntreated": 136.577,
-      "rsIonImplantation": 139.751,
-      "rsElectromagneticCoupling": 139.711,
-      "lsUntreated": -1.17393,
-      "lsIonImplantation": -1.15671,
-      "lsElectromagneticCoupling": -1.15897,
-      "zUntreated": 1481.50681,
-      "zIonImplantation": 1460.2712,
-      "zElectromagneticCoupling": 1463.0892
-    }
-  ],
-  "NU1006-20": [
-    {
-      "id": 1,
-      "rsUntreated": 136.025,
-      "rsIonImplantation": 139.879,
-      "rsElectromagneticCoupling": 139.795,
-      "lsUntreated": -1.17643,
-      "lsIonImplantation": -1.15995,
-      "lsElectromagneticCoupling": -1.16113,
-      "zUntreated": 1484.58569,
-      "zIonImplantation": 1464.33611,
-      "zElectromagneticCoupling": 1465.80509
-    },
-    {
-      "id": 2,
-      "rsUntreated": 136.42,
-      "rsIonImplantation": 140.033,
-      "rsElectromagneticCoupling": 139.86,
-      "lsUntreated": -1.17608,
-      "lsIonImplantation": -1.15958,
-      "lsElectromagneticCoupling": -1.16067,
-      "zUntreated": 1484.18242,
-      "zIonImplantation": 1463.88955,
-      "zElectromagneticCoupling": 1465.22593
-    },
-    {
-      "id": 3,
-      "rsUntreated": 137.284,
-      "rsIonImplantation": 140.113,
-      "rsElectromagneticCoupling": 139.992,
-      "lsUntreated": -1.17621,
-      "lsIonImplantation": -1.15985,
-      "lsElectromagneticCoupling": -1.16093,
-      "zUntreated": 1484.43096,
-      "zIonImplantation": 1464.22399,
-      "zElectromagneticCoupling": 1465.56345
-    },
-    {
-      "id": 4,
-      "rsUntreated": 136.743,
-      "rsIonImplantation": 140.192,
-      "rsElectromagneticCoupling": 139.995,
-      "lsUntreated": -1.17594,
-      "lsIonImplantation": -1.1597,
-      "lsElectromagneticCoupling": -1.16062,
-      "zUntreated": 1484.03777,
-      "zIonImplantation": 1464.04621,
-      "zElectromagneticCoupling": 1465.17937
-    },
-    {
-      "id": 5,
-      "rsUntreated": 136.837,
-      "rsIonImplantation": 140.274,
-      "rsElectromagneticCoupling": 140.104,
-      "lsUntreated": -1.17646,
-      "lsIonImplantation": -1.15999,
-      "lsElectromagneticCoupling": -1.16119,
-      "zUntreated": 1484.69718,
-      "zIonImplantation": 1464.41833,
-      "zElectromagneticCoupling": 1465.90533
-    },
-    {
-      "id": 6,
-      "rsUntreated": 137.173,
-      "rsIonImplantation": 140.241,
-      "rsElectromagneticCoupling": 139.978,
-      "lsUntreated": -1.17607,
-      "lsIonImplantation": -1.15963,
-      "lsElectromagneticCoupling": -1.16086,
-      "zUntreated": 1484.24903,
-      "zIonImplantation": 1463.97177,
-      "zElectromagneticCoupling": 1465.47917
-    },
-    {
-      "id": 7,
-      "rsUntreated": 137.381,
-      "rsIonImplantation": 140.249,
-      "rsElectromagneticCoupling": 139.832,
-      "lsUntreated": -1.17598,
-      "lsIonImplantation": -1.15959,
-      "lsElectromagneticCoupling": -1.16072,
-      "zUntreated": 1484.14712,
-      "zIonImplantation": 1463.91473,
-      "zElectromagneticCoupling": 1465.28835
-    },
-    {
-      "id": "平均值",
-      "rsUntreated": 136.838,
-      "rsIonImplantation": 140.14,
-      "rsElectromagneticCoupling": 139.936,
-      "lsUntreated": -1.17616,
-      "lsIonImplantation": -1.15976,
-      "lsElectromagneticCoupling": -1.16087,
-      "zUntreated": 1484.33288,
-      "zIonImplantation": 1464.11438,
-      "zElectromagneticCoupling": 1465.49238
-    }
-  ],
-  "NU1006-21": [
-    {
-      "id": 1,
-      "rsUntreated": 135.846,
-      "rsIonImplantation": 140.116,
-      "rsElectromagneticCoupling": 140.083,
-      "lsUntreated": -1.17488,
-      "lsIonImplantation": -1.15866,
-      "lsElectromagneticCoupling": -1.16015,
-      "zUntreated": 1482.62918,
-      "zIonImplantation": 1462.73567,
-      "zElectromagneticCoupling": 1464.59921
-    },
-    {
-      "id": 2,
-      "rsUntreated": 136.24,
-      "rsIonImplantation": 140.226,
-      "rsElectromagneticCoupling": 140.152,
-      "lsUntreated": -1.17452,
-      "lsIonImplantation": -1.15829,
-      "lsElectromagneticCoupling": -1.15968,
-      "zUntreated": 1482.22591,
-      "zIonImplantation": 1462.28911,
-      "zElectromagneticCoupling": 1464.02005
-    },
-    {
-      "id": 3,
-      "rsUntreated": 137.103,
-      "rsIonImplantation": 140.33,
-      "rsElectromagneticCoupling": 140.294,
-      "lsUntreated": -1.17466,
-      "lsIonImplantation": -1.15855,
-      "lsElectromagneticCoupling": -1.15994,
-      "zUntreated": 1482.47445,
-      "zIonImplantation": 1462.62355,
-      "zElectromagneticCoupling": 1464.35757
-    },
-    {
-      "id": 4,
-      "rsUntreated": 136.562,
-      "rsIonImplantation": 140.34,
-      "rsElectromagneticCoupling": 140.271,
-      "lsUntreated": -1.17439,
-      "lsIonImplantation": -1.15841,
-      "lsElectromagneticCoupling": -1.15963,
-      "zUntreated": 1482.08126,
-      "zIonImplantation": 1462.44577,
-      "zElectromagneticCoupling": 1463.97349
-    },
-    {
-      "id": 5,
-      "rsUntreated": 136.657,
-      "rsIonImplantation": 140.459,
-      "rsElectromagneticCoupling": 140.336,
-      "lsUntreated": -1.17491,
-      "lsIonImplantation": -1.15869,
-      "lsElectromagneticCoupling": -1.16022,
-      "zUntreated": 1482.74067,
-      "zIonImplantation": 1462.81789,
-      "zElectromagneticCoupling": 1464.71645
-    },
-    {
-      "id": 6,
-      "rsUntreated": 136.992,
-      "rsIonImplantation": 140.424,
-      "rsElectromagneticCoupling": 140.202,
-      "lsUntreated": -1.17452,
-      "lsIonImplantation": -1.15834,
-      "lsElectromagneticCoupling": -1.15989,
-      "zUntreated": 1482.29252,
-      "zIonImplantation": 1462.37133,
-      "zElectromagneticCoupling": 1464.29029
-    },
-    {
-      "id": 7,
-      "rsUntreated": 137.2,
-      "rsIonImplantation": 140.45,
-      "rsElectromagneticCoupling": 140.117,
-      "lsUntreated": -1.17443,
-      "lsIonImplantation": -1.15829,
-      "lsElectromagneticCoupling": -1.15975,
-      "zUntreated": 1482.19061,
-      "zIonImplantation": 1462.31429,
-      "zElectromagneticCoupling": 1464.09947
-    },
-    {
-      "id": "平均值",
-      "rsUntreated": 136.657,
-      "rsIonImplantation": 140.335,
-      "rsElectromagneticCoupling": 140.208,
-      "lsUntreated": -1.17461,
-      "lsIonImplantation": -1.15846,
-      "lsElectromagneticCoupling": -1.15989,
-      "zUntreated": 1482.37637,
-      "zIonImplantation": 1462.51394,
-      "zElectromagneticCoupling": 1464.29379
-    }
-  ],
-  "NU1006-22": [
-    {
-      "id": 1,
       "rsUntreated": 135.706,
       "rsIonImplantation": 140.16,
       "rsElectromagneticCoupling": 140.452,
@@ -2155,7 +1763,7 @@
       "zElectromagneticCoupling": 1465.76397
     }
   ],
-  "NU1006-23": [
+  "NU1006-19": [
     {
       "id": 1,
       "rsUntreated": 136.039,
@@ -2253,7 +1861,7 @@
       "zElectromagneticCoupling": 1465.25278
     }
   ],
-  "NU1006-24": [
+  "NU1006-20": [
     {
       "id": 1,
       "rsUntreated": 135.835,
@@ -2351,7 +1959,7 @@
       "zElectromagneticCoupling": 1464.09314
     }
   ],
-  "NU1006-25": [
+  "NU1006-21": [
     {
       "id": 1,
       "rsUntreated": 135.955,
@@ -2449,7 +2057,7 @@
       "zElectromagneticCoupling": 1463.32117
     }
   ],
-  "NU1006-26": [
+  "NU1006-22": [
     {
       "id": 1,
       "rsUntreated": 135.991,
@@ -2547,7 +2155,7 @@
       "zElectromagneticCoupling": 1463.69283
     }
   ],
-  "NU1006-27": [
+  "NU1006-23": [
     {
       "id": 1,
       "rsUntreated": 135.905,
@@ -2645,7 +2253,7 @@
       "zElectromagneticCoupling": 1463.42371
     }
   ],
-  "NU1006-28": [
+  "NU1006-24": [
     {
       "id": 1,
       "rsUntreated": 135.999,
@@ -2743,7 +2351,7 @@
       "zElectromagneticCoupling": 1462.1985
     }
   ],
-  "NU1006-29": [
+  "NU1006-25": [
     {
       "id": 1,
       "rsUntreated": 136.136,
@@ -2841,7 +2449,7 @@
       "zElectromagneticCoupling": 1462.75423
     }
   ],
-  "NU1006-30": [
+  "NU1006-26": [
     {
       "id": 1,
       "rsUntreated": 135.953,
