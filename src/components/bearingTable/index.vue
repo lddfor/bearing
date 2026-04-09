@@ -416,7 +416,7 @@
     // 根据轴承型号构建图片路径
     const model = row.bearingModel;
     const imageDir = model === 'QJS206' ? 'QJS206Image' : 'NU1006Image';
-    const fileName = model === 'QJS206' ? 'QJS206轴承内外圈阻抗有效区间-30.png' : 'NU1006轴承内外圈阻抗有效区间-30.png';
+    const fileName = model === 'QJS206' ? 'QJS206轴承内外圈阻抗有效区间-26.png' : 'NU1006轴承内外圈阻抗有效区间-26.png';
     const basePath = import.meta.env.BASE_URL || '/';
     const imagePath = `${basePath}${imageDir}/${fileName}`;
 
