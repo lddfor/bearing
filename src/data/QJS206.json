@@ -1654,15 +1654,15 @@
     },
     {
       "id": "平均值",
-      "rsUntreated": 262.135,
-      "rsIonImplantation": 248.213,
-      "rsElectromagneticCoupling": 249.162,
-      "lsUntreated": -2.08972,
-      "lsIonImplantation": -2.06051,
-      "lsElectromagneticCoupling": -2.0675,
-      "zUntreated": 2639.07332,
-      "zIonImplantation": 2601.18426,
-      "zElectromagneticCoupling": 2610.01599
+      "rsUntreated": 261.503,
+      "rsIonImplantation": 246.497,
+      "rsElectromagneticCoupling": 247.41506,
+      "lsUntreated": -2.08942,
+      "lsIonImplantation": -2.0544,
+      "lsElectromagneticCoupling": -2.06288,
+      "zUntreated": 2638.6386,
+      "zIonImplantation": 2593.38164,
+      "zElectromagneticCoupling": 2604.06731
     }
   ],
   "QJS206-18": [
