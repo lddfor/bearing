@@ -1,7 +1,14 @@
 <template>
   <div class="common-layout">
     <el-container>
-      <el-header class="page-header">轴承检测数据库</el-header>
+      <el-header class="page-header">
+        <span class="header-title">轴承检测数据库</span>
+        <!-- 退出登录：调后端吊销 token，再清本地并回登录页 -->
+        <span class="header-user">
+          <span class="user-name">{{ currentUserName }}</span>
+          <el-button link type="primary" class="logout-button" @click="handleLogout">退出登录</el-button>
+        </span>
+      </el-header>
       <el-container class="page-container">
         <el-aside width="160px" class="page-aside">
           <el-menu :default-active="activeMenu" class="menu-vertical-style" @select="handleMenuSelect">
@@ -58,7 +65,10 @@
 <script setup lang="ts">
   import { Menu as IconMenu, ZoomIn, TakeawayBox } from '@element-plus/icons-vue';
   import { ref, computed } from 'vue';
+  import { ElMessage } from 'element-plus';
   import { useRouter, useRoute } from 'vue-router';
+  import { getStoredUser } from '../../api/authStorage';
+  import { logout } from '../../api/auth';
 
   const router = useRouter();
   const route = useRoute();
@@ -68,16 +78,19 @@
   const deviceDialogVisible = ref(false);
   const deviceImageUrl = ref('');
 
-  // 计算当前激活的菜单项
-  const activeMenu = computed(() => {
-    const path = route.path;
-    if (path.includes('/knife-list')) {
-      return 'knife-list';
-    } else if (path.includes('/bearing')) {
-      return 'bearing';
-    }
-    return '';
-  });
+  // 顶栏显示当前登录人（登录时由 api/auth.ts 写入 sessionStorage）
+  const currentUserName = computed(() => getStoredUser()?.displayName || getStoredUser()?.username || '');
+
+  // 计算当前激活的菜单项：菜单只有 bearing 一项会被路由激活，
+  // desc / device 走弹窗（见 handleMenuSelect），不参与高亮。
+  const activeMenu = computed(() => (route.path.includes('/bearing') ? 'bearing' : ''));
+
+  /** 退出登录：后端失败也要清本地，否则会卡在"退不出去" */
+  const handleLogout = async (): Promise<void> => {
+    await logout();
+    ElMessage.success('已退出登录');
+    await router.push({ name: 'Login' });
+  };
 
   const handleMenuSelect = (key: string) => {
     if (key === 'desc') {
@@ -109,6 +122,31 @@
       font-weight: 700;
       font-size: 25px;
       font-family: 'AliFont', 'Microsoft YaHei', 'SimHei', sans-serif;
+      /* 左侧标题 + 右侧用户/退出，用 flex 分开，避免退出按钮跟着标题居中 */
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .header-title {
+        font-size: 25px;
+      }
+
+      .header-user {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      .logout-button {
+        color: #fff;
+        font-size: 14px;
+
+        &:hover {
+          color: #ffe9ec;
+        }
+      }
     }
 
     .page-aside {
